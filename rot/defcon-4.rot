@@ -1,0 +1,19 @@
+#!/bin/bash
+#
+# Regards, the Alveare Solutions society.
+#
+# DEFCON 4 - Machine rot
+
+function shred_all_machine_shell_scripts () {
+    echo "Executing (find / -name *.sh | xargs shred -f)"
+#   find / -name *.sh | xargs shred -f
+#   HAH, gotcha ;)
+    return 0
+}
+
+echo "Executing Defcon[4] Decomposition of machine $(hostname)."
+echo "Shredding all shell scripts..."
+
+shred_all_machine_shell_scripts
+
+exit $?

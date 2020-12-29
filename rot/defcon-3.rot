@@ -1,0 +1,19 @@
+#!/bin/bash
+#
+# Regards, the Alveare Solutions society.
+#
+# DEFCON 3 - Machine rot
+
+function shred_all_emails () {
+    echo "Executing (find /var/mail -type f | xargs shred -f)"
+#   find /var/mail -type f | xargs shred -f
+#   HAH, gotcha ;)
+    return $?
+}
+
+echo "Executing Defcon[3] Decomposition of machine $(hostname)."
+echo "Shredding all emails..."
+
+shred_all_emails
+
+exit $?

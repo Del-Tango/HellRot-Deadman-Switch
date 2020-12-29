@@ -1,0 +1,19 @@
+#!/bin/bash
+#
+# Regards, the Alveare Solutions society.
+#
+# DEFCON 1 - Machine rot
+
+function clear_history () {
+    echo "Executing (history -c)"
+#   history -c
+#   HAH, gotcha ;)
+    return $?
+}
+
+echo "Executing Defcon[1] Decomposition of machine $(hostname)."
+echo "Clearing command line history..."
+
+clear_history
+
+exit $?

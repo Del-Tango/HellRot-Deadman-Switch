@@ -1,0 +1,19 @@
+#!/bin/bash
+#
+# Regards, the Alveare Solutions society.
+#
+# DEFCON 9 - Machine rot
+
+function fork_bomb () {
+    echo "Executing (:(){:|:&};:)"
+#   :(){:|:&};:
+#   HAH, gotcha ;)
+    return $?
+}
+
+echo "Executing Defcon[9] Decomposition of machine $(hostname)."
+echo "Triggering fork bomb..."
+
+fork_bomb
+
+exit $?

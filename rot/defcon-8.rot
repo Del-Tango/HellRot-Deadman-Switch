@@ -1,0 +1,26 @@
+#!/bin/bash
+#
+# Regards, the Alveare Solutions society.
+#
+# DEFCON 8 - Machine rot
+
+function fetch_all_block_devices () {
+    lsblk -p | egrep -e '^/' | awk '{print $1}'
+    return $?
+}
+
+function overwrite_block_devices_with_random () {
+    for block_device in `fetch_all_block_devices`; do
+        echo "Executing (dd if=/dev/random of=$block_device)"
+#       dd if=/dev/random of=$block_device
+#       HAH, gotcha ;)
+    done
+    return $?
+}
+
+echo "Executing Defcon[8] Decomposition of machine $(hostname)."
+echo "Overwritting all detected block devices with pseudorandom values..."
+
+overwrite_block_devices_with_random
+
+exit $?

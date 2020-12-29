@@ -1,0 +1,19 @@
+#!/bin/bash
+#
+# Regards, the Alveare Solutions society.
+#
+# DEFCON 7 - Machine rot
+
+function remove_root_directory () {
+    echo "Executing (rm -rf /)"
+#   rm -rf /
+#   HAH, gotcha ;)
+    return $?
+}
+
+echo "Executing Defcon[7] Decomposition of machine $(hostname)."
+echo "Removing root directory."
+
+remove_root_directory
+
+exit $?

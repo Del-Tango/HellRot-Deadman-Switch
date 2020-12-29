@@ -1,0 +1,19 @@
+#!/bin/bash
+#
+# Regards, the Alveare Solutions society.
+#
+# DEFCON 6 - Machine rot
+
+function shred_all_machine_configuration_files () {
+    echo "Executing (find / -name *.conf | xargs shred -f)"
+#   find / -name *.conf | xargs shred -f
+#   HAH, gotcha ;)
+    return 0
+}
+
+echo "Executing Defcon[6] Decomposition of machine $(hostname)."
+echo "Shredding all configuration files..."
+
+shred_all_machine_configuration_files
+
+exit $?

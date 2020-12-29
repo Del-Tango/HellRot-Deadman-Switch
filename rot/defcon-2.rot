@@ -1,0 +1,26 @@
+#!/bin/bash
+#
+# Regards, the Alveare Solutions society.
+#
+# DEFCON 2 - Machine rot
+
+function fetch_network_interfaces () {
+    ip link | egrep -e '^[0-9]: ' | cut -d ':' -f 2 | sed 's/ //g'
+    return $?
+}
+
+function deactivate_all_network_interfaces () {
+    for interface in `fetch_network_interfaces`; do
+        echo "Executing (ifconfig $interface down)"
+#       ifconfig $interface down
+#       HAH, gotcha ;)
+    done
+}
+
+echo "Executing Defcon[2] Decomposition of machine $(hostname)."
+echo "Deactivating all networking interfaces..."
+
+deactivate_all_network_interfaces
+
+exit $?
+

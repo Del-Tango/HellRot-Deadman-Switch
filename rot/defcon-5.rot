@@ -1,0 +1,20 @@
+#!/bin/bash
+#
+# Regards, the Alveare Solutions society.
+#
+# DEFCON 5 - Machine rot
+
+function shred_all_machine_log_files () {
+    echo "Executing (find / -name *.log | xargs shred -f)"
+#   find / -name *.log | xargs shred -f
+#   HAH, gotcha ;)
+    return 0
+}
+
+echo "Executing Defcon[5] Decomposition of machine $(hostname)."
+echo "Shredding all log files..."
+
+shred_all_machine_log_files
+
+exit $?
+
